@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom' 
 import axios from 'axios'
+
 export default function Register() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -18,16 +19,12 @@ export default function Register() {
     console.log(import.meta.env)
 console.log(import.meta.env.VITE_API_BACKEND)
 
-    axios.post("http://localhost:4000/api/create-user",newUser)
+    axios.post("https://ecommerce-4w4k.onrender.com/api/create-user",newUser)
       .then((res)=>{
         console.log(res.data)
         if(res.data.status===201){
-          alert("register successful")
           navigate("/login")
         }
-      })
-      .catch((err)=>{
-        alert("got the error while registering open console and check the response data")
       })
 
     setName("")
@@ -75,4 +72,4 @@ console.log(import.meta.env.VITE_API_BACKEND)
 }
 
 
-// name email password mobile addressnpm
+// name email password mobile address

@@ -8,8 +8,7 @@ export default function Cart() {
         fetchCartItems()
     },[])
     async function fetchCartItems(){
-        await axios.get("http://localhost:4000/api/cart",
-            {params:{userId}}
+        await axios.get("https://ecommerce-g9zn.onrender.com/api/cart",{params:{userId}}
         )
         .then((res)=>{
             console.log(res)
